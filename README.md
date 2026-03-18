@@ -20,3 +20,14 @@
 ## Решение
 
 ### Задание 1
+
+Так как сервер новый и папка home пустая, закачал туда файлы.
+
+Команда выглядит так: rsync -av --checksum --exclude='.*' ~/ /tmp/backup/
+
+Результат выполнения:
+
+<img width="900" height="323" alt="2026-03-18_21-40-58" src="https://github.com/user-attachments/assets/3c32a2d5-5f7a-49e1-afb5-61108eb89e8b" />
+
+### Задание 2
+
