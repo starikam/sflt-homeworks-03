@@ -31,3 +31,28 @@
 
 ### Задание 2
 
+Пишем скрипт:
+```
+#!/bin/bash
+
+SOURCE="$HOME/"
+DEST="/tmp/backup"
+LOGTAG="rsync-backup"
+TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+
+rsync -a --delete --checksum --exclude='.*' "$SOURCE" "$DEST" > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    logger -t "$LOGTAG" "SUCCESS: Backup completed at $TIMESTAMP"
+else
+    logger -t "$LOGTAG" "ERROR: Backup failed at $TIMESTAMP"
+fi
+```
+Пишем задачу cron:
+
+crontab -e
+0 2 * * * /usr/local/bin/backup_home.sh
+
+Выполняем пару раз скрипт принудительно (не ждем 2 часов ночи):
+
+<img width="1403" height="220" alt="2026-03-18_21-53-34" src="https://github.com/user-attachments/assets/7e62d1bb-9bc3-4a5f-9e7f-918e64acb1f7" />
