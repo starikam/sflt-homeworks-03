@@ -56,3 +56,8 @@ crontab -e
 Выполняем пару раз скрипт принудительно (не ждем 2 часов ночи):
 
 <img width="1403" height="220" alt="2026-03-18_21-53-34" src="https://github.com/user-attachments/assets/7e62d1bb-9bc3-4a5f-9e7f-918e64acb1f7" />
+
+Скрин файла crontab (не удалял комменты):
+
+<img width="921" height="633" alt="2026-03-18_21-52-03" src="https://github.com/user-attachments/assets/1b4bfb93-5b91-4530-b0a2-fc9027a1b698" />
+
